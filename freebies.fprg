@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="freebies"/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-09 04:19:13 PM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC1ORUkyU0FNNzsyMDI0LTEwLTA5OzA0OjAzOjEwIFBNOzI3OTY="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC1ORUkyU0FNNzsyMDI0LTEwLTA5OzA0OjE5OjEzIFBNOzE7MjkxNA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="hargaakhir, hargatiapbuku, palingmurah" type="Real" array="False" size=""/>
+            <assign variable="hargaakhir" expression="0"/>
+            <assign variable="hargatiapbuku" expression="0"/>
+            <input variable="hargatiapbuku"/>
+            <assign variable="palingmurah" expression="1000"/>
+            <while expression="hargatiapbuku !=0">
+                <if expression="palingmurah&lt;=hargatiapbuku">
+                    <then>
+                        <assign variable="hargatiapbuku" expression="hargatiapbuku"/>
+                    </then>
+                    <else>
+                        <assign variable="palingmurah" expression="hargatiapbuku"/>
+                    </else>
+                </if>
+                <assign variable="hargaakhir" expression="hargaakhir+hargatiapbuku"/>
+                <input variable="hargatiapbuku"/>
+            </while>
+            <if expression="hargaakhir&gt;=100.00">
+                <then>
+                    <assign variable="hargaakhir" expression="hargaakhir-palingmurah"/>
+                </then>
+                <else>
+                    <assign variable="hargaakhir" expression="hargaakhir"/>
+                </else>
+            </if>
+            <output expression="tofixed(hargaakhir,2)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
